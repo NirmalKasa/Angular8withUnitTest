@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <label> UserName</label>
+        <input type="text" id="userName" name="userName" #userName/>
+    </div>
+    <div class="row">
+        <label> UserName</label>
+        <input type="text" id="company" name="company" #company/>
+    </div> 
+    <button class="btn btn-primary" type="button" (click)="onAddUser()">Add</button>
+</div>
+
+<div class="container">
+    <ul>
+        <li *ngFor="let user of UserList; let i= index">
+            {{ user.username}}  ||   {{ user.company}}   || <button (click)="onDelete(i)">delete</button>
+        </li>
+    </ul>
+</div>
