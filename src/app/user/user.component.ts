@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { UserService } from './user.service';
+import { User } from './user.model';
 
 @Component({
   selector: 'app-user',
@@ -24,10 +25,14 @@ export class UserComponent implements OnInit {
   onAddUser() {
     let username = this.userName.nativeElement.value;
     let company = this.company.nativeElement.value;
-    this.userService.addUser({username: username, company: company})
+    this.userService.addUser(new User(username,company));
   }
 
   onDelete(index: number){
     this.userService.deleteUser(index);
+  }
+
+  onClearUsers(){
+    this.userService.clearUserData()
   }
 }
