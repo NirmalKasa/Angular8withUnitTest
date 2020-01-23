@@ -18,8 +18,17 @@ export class UserComponent implements OnInit {
   ngOnInit() {
     //this.UserList = this.userService.getUserList();
     this.userService.userListChanged.subscribe( data =>{
+      console.log("data=="+data)
       this.UserList = data;
     })
+  }
+
+  onStoreUsers(){
+    this.userService.onStoreUsers();
+  }
+
+  onGetUserData(){
+    this.userService.getUserList();
   }
 
   onAddUser() {

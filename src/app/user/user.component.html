@@ -8,13 +8,15 @@
         <input type="text" id="company" name="company" #company/>
     </div> 
     <button class="btn btn-primary" type="button" (click)="onAddUser()">Add</button>
+    <button class="btn btn-primary" type="button" (click)="onGetUserData()">Get Users</button>
     <button class="btn btn-primary" type="button" (click)="onClearUsers()">Clear</button>
+    <button class="btn btn-primary" type="button" (click)="onStoreUsers()">Store Users</button>
 </div>
 
 <div class="container">
     <ul>
         <li *ngFor="let user of UserList; let i= index">
-            {{ user.username}}  ||   {{ user.company}}   || <button (click)="onDelete(i)">delete</button>
+            {{ user.userName}}  ||   {{ user.company}}   || <button (click)="onDelete(i)">delete</button>
         </li>
     </ul>
 </div>
