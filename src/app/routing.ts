@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  Routes } from '@angular/router';
 import { UserComponent } from './user/user.component';
+import { HttpComponent } from './http/http.component';
 
 @Component({
     
@@ -22,7 +23,8 @@ export const route : Routes = [
     { path :'', component: HeaderComponent, pathMatch:'full'},
     { path :'search', component: SearchComponent },
     { path :'header', component: HeaderComponent },
-    { path :'user', component: UserComponent }
+    { path :'user', component: UserComponent },
+    {path:'http', component: HttpComponent},
 ]
 
 

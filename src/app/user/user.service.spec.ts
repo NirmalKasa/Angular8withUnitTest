@@ -1,11 +1,12 @@
 import { UserService } from "./user.service"
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
+import { User } from './user.model';
 
 
 describe( 'User-Service',()=>{
     let userService : UserService ;
-
+    let user : User
 
     beforeEach(() =>{
         TestBed.configureTestingModule ( {
@@ -49,7 +50,7 @@ describe('getUserList',()=>{
 
     it('should add user to collection', () => {
         const userResponse = [ {username :'hari',company:'EY'}, {username :'giri',company:'EY'}]
-        const user = [ {username :'hari',company:'EY'}]
+        const user = new User('hari','EY');
        
        expect(userService.addUser(user)).toBe(3);
     })
