@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable, of } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { DataStorage } from './user.datastorage';
-import { ThrowStmt } from '@angular/compiler';
+
 import { User } from './user.model';
 
 @Injectable({providedIn:'root'})
