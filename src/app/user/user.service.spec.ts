@@ -2,15 +2,18 @@ import { UserService } from "./user.service"
 import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 import { User } from './user.model';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 describe( 'User-Service',()=>{
     let userService : UserService ;
+    let httpMock: HttpTestingController;
     let user : User
 
     beforeEach(() =>{
         TestBed.configureTestingModule ( {
-            providers: [UserService]
+            imports: [HttpClientTestingModule],
+            providers: [UserService,]
         })
 
         userService = TestBed.get(UserService);
@@ -28,7 +31,9 @@ describe('getUserList',()=>{
 
     beforeEach(() =>{
         TestBed.configureTestingModule ( {
-            providers: [UserService]
+            providers: [UserService],
+            imports: [HttpClientTestingModule],
+
         })
 
         userService = TestBed.get(UserService);

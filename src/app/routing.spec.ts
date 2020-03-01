@@ -5,23 +5,24 @@ import { RouterTestingModule } from '@angular/router/testing';
 import {route, HeaderComponent, SearchComponent} from './routing';
 import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
+import { HttpComponent } from './http/http.component';
 
 describe('app-unit-test',()=>{
 
     let location : Location;
-    let router : Router
+    let router : Router;
     let fixture;
 
     beforeEach( ()=> {
         TestBed.configureTestingModule( {
             imports: [RouterTestingModule.withRoutes(route)],
-            declarations : [HeaderComponent,SearchComponent,AppComponent,UserComponent]
+            declarations : [HeaderComponent,SearchComponent,AppComponent,UserComponent,HttpComponent]
             
         })
 
         router = TestBed.get(Router);
         location = TestBed.get(Location);
-        fixture = TestBed.createComponent(AppComponent);
+      //  fixture = TestBed.createComponent(AppComponent);
         router.initialNavigation();
     });
 
